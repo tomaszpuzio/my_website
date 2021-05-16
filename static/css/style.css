@@ -7,7 +7,7 @@
 }
 
 .box-main {
-  padding-left: 5rem;
+  padding-left: 8rem;
 }
 
 .box-side {
@@ -43,20 +43,34 @@
   font-size: 6rem;
 }
 
+.tab-background {
+  position: relative;
+  height: 33.33vh;
+}
+
+
 .tab {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 33.33vh;
-  border-radius: 0;
+
   font-family: Montserrat;
   font-weight: 400;
   font-size: 2rem;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  transition: left 0.4s;
+  transition-timing-function: ease-in-out;
 }
 
 .tab:hover {
-  color: red;
+  left: -4rem;
 }
 
 .tab-top {
