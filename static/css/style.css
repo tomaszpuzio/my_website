@@ -1,16 +1,31 @@
-.body {
+body.app {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight:300;
   background-color: #eff0f4;
 }
 
-.box {
+hr.break-line {
+  border-top: 0;
+
+  width: 10%;
+  margin: 20rem 45%;
+  background-color: transparent;
+
+  border-bottom-width: 0.8rem;
+  border-bottom-style: dotted;
+  border-bottom-color: #0074e4;
+}
+
+.main {
+  padding: 0 5rem;
+}
+
+.sidebar {
   height: 100vh;
-}
-
-.box-main {
-  padding-left: 8rem;
-}
-
-.box-side {
+  position: fixed;
+  top: 0;
+  right: 0;
   padding: 0;
 }
 
@@ -59,32 +74,54 @@
   font-family: Montserrat;
   font-weight: 400;
   font-size: 2rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px black;
 
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
 
-  transition: left 0.4s;
+  transition: left 0.4s, background-color 0.4s;
   transition-timing-function: ease-in-out;
+
+}
+
+.tab-top {
+  background-color: #74dbef;
+}
+
+.tab-middle {
+  background-color: #0074e4;
+}
+
+.tab-bottom {
+  background-color: #264e86;
 }
 
 .tab:hover {
   left: -4rem;
 }
 
-.tab-top {
-  color: #000000;
-  background-color: #74dbef;
-
+.personal-img {
+  width: 20rem;
+  margin: 0 3rem 3rem 0;
 }
 
-.tab-middle {
+a.tab-top:hover {
   color: #ffffff;
-  background-color: #0074e4;
+  background-color: #34cae7;
+  text-decoration: none;
 }
 
-.tab-bottom {
+a.tab-middle:hover {
+  background-color: #005cb6;
   color: #ffffff;
-  background-color: #264e86;
+  text-decoration: none;
+}
+
+a.tab-bottom:hover {
+  background-color: #1e3e6b;
+  color: #ffffff;
+  text-decoration: none;
 }
