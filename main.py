@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from forms import ContactForm
 import os
 
 app = Flask(__name__)
@@ -9,7 +10,8 @@ Bootstrap(app)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    form = ContactForm()
+    return render_template("index.html", contact_form=form)
 
 
 if __name__ == "__main__":

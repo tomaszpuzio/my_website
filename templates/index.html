@@ -1,69 +1,103 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
 {% include "header.html" %}
-{% extends "bootstrap/base.html" %}
 
-{% block content %}
-<body class="app">
-  <div class="container-fluid">
+<body >
 
-    <!-- side bar -->
+  <!-- side bar -->
 
-    <div class="col-3 sidebar">
-      <div class="tab-background">
-        <a href="#aboutme"class="tab tab-top">about me</a>
-      </div>
-      <div class="tab-background">
-        <a href="#projects" class="tab tab-middle">projects</a>
-      </div>
-      <div class="tab-background">
-        <a href="#contact" class="tab tab-bottom">contact</a>
-      </div>
+  <div class="sidebar">
+    <div class="tab-background">
+      <a href="#aboutme"class="tab tab-top">about me</a>
     </div>
+    <div class="tab-background">
+      <a href="#projects" class="tab tab-middle">projects</a>
+    </div>
+    <div class="tab-background">
+      <a href="#contact" class="tab tab-bottom">contact</a>
+    </div>
+  </div>
+
+  <div class="container">
 
     <!-- introduction -->
 
-    <div class="row main" id="home">
-
-      <div class="col-9">
-        <div class="intro">
-          <h1 class="intro-regular">My name is</h1>
-          <h2 class="intro-large intro-large-top">Tomasz Puzio</h2>
-          <div class="intro-top-border"></div>
-        </div>
-        <div class="intro">
-          <h1 class="intro-regular">I am an engineer aspiring to become</h1>
-          <h2 class="intro-large intro-large-bottom">Python Developer</h2>
-          <div class="intro-bottom-border"></div>
-        </div>
+    <div class="section" id="home">
+      <div class="intro-top">
+        <div class="intro-regular">My name is</div>
+        <div class="intro-large">Tomasz Puzio</div>
+        <div class="intro-top-border"></div>
+      </div>
+      <div class="intro-bottom">
+        <div class="intro-regular">I am an engineer aspiring to become</div>
+        <div class="intro-large">Python Developer</div>
+        <div class="intro-bottom-border"></div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-9">
-        <hr class="break-line"/>
-      </div>
-    </div>
+    <hr />
 
     <!-- about me -->
-    <div class="row" id="aboutme">
-      <div class="col-9 main">
-        <img class="personal-img" src="{{ url_for('static', filename='imgs/personal.png')}}" alt="Personal Photo" align="left">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus ut nunc semper tempus. Phasellus at magna tortor. Etiam id justo nibh. Pellentesque nec eros quis tortor maximus finibus eget in risus. Donec tempus leo vitae mauris laoreet, eget luctus neque tempus. Maecenas metus justo, varius sit amet sapien at, venenatis tempor risus. Sed in ultricies quam. Phasellus dignissim nec nunc id congue. Suspendisse potenti. Phasellus volutpat, justo at consequat laoreet, urna eros vulputate ante, eget consequat libero sem quis turpis. Suspendisse potenti. Quisque placerat tellus venenatis luctus lobortis. Donec eget ipsum facilisis enim venenatis feugiat. Quisque rutrum, ligula a tempus euismod, leo risus malesuada orci, a luctus eros ante in enim. Ut ultricies est tempus purus vulputate bibendum. Sed id augue a nibh malesuada imperdiet id vitae leo. Donec lorem odio, ornare at arcu nec, blandit gravida ex. Fusce quam odio, egestas sed mauris eu, iaculis viverra velit. Vivamus urna ipsum, facilisis at hendrerit ac, feugiat in ante. Nunc ipsum neque, sollicitudin sed convallis nec, maximus in nunc. Nullam non justo quis ipsum accumsan scelerisque. Donec tellus erat, euismod ac turpis in, blandit fermentum ex. Aliquam accumsan magna a arcu tincidunt auctor.</p>
 
-        <div class="row">
-          <div class="col-4">
-            col 1
-          </div>
-          <div class="col-4">
-            col 2
-          </div>
-          <div class="col-4">
-            col 3
-          </div>
+    <div class="section" id="aboutme">
+      <img class="personal-img" src="{{ url_for('static', filename='imgs/personal.jpg')}}" alt="Personal Photo" align="left">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus ut nunc semper tempus. Phasellus at magna tortor. Etiam id justo nibh. Pellentesque nec eros quis tortor maximus finibus eget in risus. Donec tempus leo vitae mauris laoreet, eget luctus neque tempus. Maecenas metus justo, varius sit amet sapien at, venenatis tempor risus. Sed in ultricies quam. Phasellus dignissim nec nunc id congue. Suspendisse potenti. Phasellus volutpat, justo at consequat laoreet, urna eros vulputate ante, eget consequat libero sem quis turpis. Suspendisse potenti. Quisque placerat tellus venenatis luctus lobortis. Donec eget ipsum facilisis enim venenatis feugiat. Quisque rutrum, ligula a tempus euismod, leo risus malesuada orci, a luctus eros ante in enim. Ut ultricies est tempus purus vulputate bibendum. Sed id augue a nibh malesuada imperdiet id vitae leo. Donec lorem odio, ornare at arcu nec, blandit gravida ex. Fusce quam odio, egestas sed mauris eu, iaculis viverra velit. Vivamus urna ipsum, facilisis at hendrerit ac, feugiat in ante. Nunc ipsum neque, sollicitudin sed convallis nec, maximus in nunc. Nullam non justo quis ipsum accumsan scelerisque. Donec tellus erat, euismod ac turpis in, blandit fermentum ex. Aliquam accumsan magna a arcu tincidunt auctor.</p>
+
+      <div class="container-small">
+        <div class="aboutme-column">
+          <img class="aboutme-img" src="{{ url_for('static', filename='imgs/presentation.png')}}" alt="Lecture Photo" align="center">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus ut nunc semper tempus. Phasellus at magna tortor. Etiam id justo nibh. Pellentesque nec eros quis tortor maximus finibus eget in risus. Donec tempus leo vitae mauris laoreet, eget luctus neque tempus. Maecenas metus justo, varius sit amet sapien at, venenatis tempor risus. Sed in ultricies quam. Phasellus dignissim nec nunc id congue. Suspendisse potenti. Phasellus volutpat, justo at consequat laoreet, urna eros vulputate ante, eget consequat libero sem quis turpis. Suspendisse potenti. Quisque placerat tellus venenatis luctus lobortis. Donec eget ipsum facilisis enim venenatis feugiat. Quisque rutrum, ligula a tempus euismod, leo risus malesuada orci, a luctus eros ante in enim. Ut ultricies est tempus purus vulputate bibendum. Sed id augue a nibh malesuada imperdiet id vitae leo. Donec lorem odio, ornare at arcu nec, blandit gravida ex. Fusce quam odio, egestas sed mauris eu, iaculis viverra velit. Vivamus ur</p>
         </div>
-
+        <div class="aboutme-column">
+          <img class="aboutme-img" src="{{ url_for('static', filename='imgs/engineering.png')}}" alt="Engineering Photo">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus ut nunc semper tempus. Phasellus at magna tortor. Etiam id justo nibh. Pellentesque nec eros quis tortor maximus finibus eget in risus. Donec tempus leo vitae mauris laoreet, eget luctus neque tempus. Maecenas metus justo, varius sit amet sapien at, venenatis tempor risus. Sed in ultricies quam. Phasellus dignissim nec nunc id congue. Suspendisse potenti. Phasellus volutpat, justo at consequat laoreet, urna eros vulputate ante, eget consequat libero sem quis turpis. Suspendisse potenti. Quisque placerat tellus venenatis luctus lobortis. Donec eget ipsum facilisis enim venenatis feugiat. Quisque rutrum, ligula a tempus euismod, leo risus malesuada orci, a luctus eros ante in enim. Ut ultricies est tempus purus vulputate bibendum. Sed id augue a nibh malesuada imperdiet id vitae leo. Donec lorem odio, ornare at arcu nec, blandit gravida ex. Fusce quam odio, egestas sed mauris eu, iaculis viverra velit. Vivamus ur</p>
+        </div>
+        <div class="aboutme-column">
+          <img class="aboutme-img" src="{{ url_for('static', filename='imgs/coding.png')}}" alt="Coding Photo">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus ut nunc semper tempus. Phasellus at magna tortor. Etiam id justo nibh. Pellentesque nec eros quis tortor maximus finibus eget in risus. Donec tempus leo vitae mauris laoreet, eget luctus neque tempus. Maecenas metus justo, varius sit amet sapien at, venenatis tempor risus. Sed in ultricies quam. Phasellus dignissim nec nunc id congue. Suspendisse potenti. Phasellus volutpat, justo at consequat laoreet, urna eros vulputate ante, eget consequat libero sem quis turpis. Suspendisse potenti. Quisque placerat tellus venenatis luctus lobortis. Donec eget ipsum facilisis enim venenatis feugiat. Quisque rutrum, ligula a tempus euismod, leo risus malesuada orci, a luctus eros ante in enim. Ut ultricies est tempus purus vulputate bibendum. Sed id augue a nibh malesuada imperdiet id vitae leo. Donec lorem odio, ornare at arcu nec, blandit gravida ex. Fusce quam odio, egestas sed mauris eu, iaculis viverra velit. Vivamus ur</p>
+        </div>
       </div>
     </div>
+
+    <hr />
+
+    <div class="section" id="projects">
+      <div class="section-project">
+        <h1 class="section-project-title">Pomodoro</h1>
+        <img class="section-project-img" src="{{ url_for('static', filename='imgs/presentation.png')}}" alt="Lecture Photo" align="right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus ut nunc semper tempus. Phasellus at magna tortor. Etiam id justo nibh. Pellentesque nec eros quis tortor maximus finibus eget in risus. Donec tempus leo vitae mauris laoreet, eget luctus neque tempus. Maecenas metus justo, varius sit amet sapien at, venenatis tempor risus. Sed in ultricies quam. Phasellus dignissim nec nunc id congue. Suspendisse potenti. Phasellus volutpat, justo at consequat laoreet, urna eros vulputate ante, eget consequat libero sem quis turpis. Suspendisse potenti. Quisque placerat tellus venenatis luctus lobortis. Donec eget ipsum facilisis enim venenatis feugiat. Quisque rutrum, ligula a tempus euismod, leo risus malesuada orci, a luctus eros ante in enim. Ut ultricies est tempus purus vulputate bibendum. Sed id augue a nibh malesuada imperdiet id vitae leo. Donec lorem odio, ornare at arcu nec, blandit gravida ex. Fusce quam odio, egestas sed mauris eu, iaculis viverra velit. Vivamus ur</p>
+      </div>
+      <div class="section-project">
+        <h1 class="section-project-title">Python</h1>
+        <img class="section-project-img" src="{{ url_for('static', filename='imgs/presentation.png')}}" alt="Lecture Photo" align="left">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus ut nunc semper tempus. Phasellus at magna tortor. Etiam id justo nibh. Pellentesque nec eros quis tortor maximus finibus eget in risus. Donec tempus leo vitae mauris laoreet, eget luctus neque tempus. Maecenas metus justo, varius sit amet sapien at, venenatis tempor risus. Sed in ultricies quam. Phasellus dignissim nec nunc id congue. Suspendisse potenti. Phasellus volutpat, justo at consequat laoreet, urna eros vulputate ante, eget consequat libero sem quis turpis. Suspendisse potenti. Quisque placerat tellus venenatis luctus lobortis. Donec eget ipsum facilisis enim venenatis feugiat. Quisque rutrum, ligula a tempus euismod, leo risus malesuada orci, a luctus eros ante in enim. Ut ultricies est tempus purus vulputate bibendum. Sed id augue a nibh malesuada imperdiet id vitae leo. Donec lorem odio, ornare at arcu nec, blandit gravida ex. Fusce quam odio, egestas sed mauris eu, iaculis viverra velit. Vivamus ur</p>
+        <a  href="www.wp.pl"> link </a>
+      </div>
+      <div class="section-project">
+        <h1 class="section-project-title">Another project</h1>
+        <img class="section-project-img" src="{{ url_for('static', filename='imgs/presentation.png')}}" alt="Lecture Photo" align="right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus ut nunc semper tempus. Phasellus at magna tortor. Etiam id justo nibh. Pellentesque nec eros quis tortor maximus finibus eget in risus. Donec tempus leo vitae mauris laoreet, eget luctus neque tempus. Maecenas metus justo, varius sit amet sapien at, venenatis tempor risus. Sed in ultricies quam. Phasellus dignissim nec nunc id congue. Suspendisse potenti. Phasellus volutpat, justo at consequat laoreet, urna eros vulputate ante, eget consequat libero sem quis turpis. Suspendisse potenti. Quisque placerat tellus venenatis luctus lobortis. Donec eget ipsum facilisis enim venenatis feugiat. Quisque rutrum, ligula a tempus euismod, leo risus malesuada orci, a luctus eros ante in enim. Ut ultricies est tempus purus vulputate bibendum. Sed id augue a nibh malesuada imperdiet id vitae leo. Donec lorem odio, ornare at arcu nec, blandit gravida ex. Fusce quam odio, egestas sed mauris eu, iaculis viverra velit. Vivamus ur</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="section" id="contact">
+      <div class="section-contact">
+        <div class="contact-form">
+        {% for object in contact_form: %}
+        {% if object != contact_form.csrf_token: %}
+        <label for="{{ object.id }}">{{ object.label }}  </label>
+        {{ object(class_="contact-form-field") }}
+        {% endif %}
+        {% endfor %}
+        </div>
+        <div class="contact-img">
+        <img class="image" src="{{ url_for('static', filename='imgs/avatar5.png')}}" alt="Greeting avatar" align="right">
+        </div>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
-{% endblock %}

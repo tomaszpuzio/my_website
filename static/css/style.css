@@ -1,61 +1,48 @@
-body.app {
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight:300;
-  background-color: #eff0f4;
+:root {
+  --tab-border-width: 0.7rem;
 }
 
-hr.break-line {
-  border-top: 0;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Montserrat;
+  font-size: 1.6rem;
+  font-weight:300;
+  margin: 0;
+  background-color: #eff0f4;
+  text-align: justify;
+}
+
+hr {
+  border: 0;
 
   width: 10%;
-  margin: 20rem 45%;
+  margin: 15rem 45%;
   background-color: transparent;
 
-  border-bottom-width: 0.8rem;
+  border-bottom-width: 0.7rem;
   border-bottom-style: dotted;
   border-bottom-color: #0074e4;
 }
 
-.main {
-  padding: 0 5rem;
+p {
+  margin: 0;
 }
 
 .sidebar {
-  height: 100vh;
   position: fixed;
+  height: 100vh;
+  width: 35rem;
   top: 0;
   right: 0;
   padding: 0;
-}
-
-.intro {
-  position:relative;
-  margin-top: 13rem;
-}
-
-.intro-regular {
-  font-family: Montserrat;
-  font-weight: 400;
-  font-size: 4rem;
-}
-
-.intro-top-border {
-  position:absolute;
-  width: 42rem;
-  border-bottom: 3px #0074e4 solid;
-}
-
-.intro-bottom-border {
-  position:absolute;
-  width: 56rem;
-  border-bottom: 3px #0074e4 solid;
-}
-
-.intro-large {
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 6rem;
 }
 
 .tab-background {
@@ -63,13 +50,10 @@ hr.break-line {
   height: 33.33vh;
 }
 
-
 .tab {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  height: 33.33vh;
 
   font-family: Montserrat;
   font-weight: 400;
@@ -82,46 +66,169 @@ hr.break-line {
   right: 0;
   left: 0;
 
+  border-width: var(--tab-border-width);
+  border-color: #05072c;
+  border-style: solid;
+
   transition: left 0.4s, background-color 0.4s;
   transition-timing-function: ease-in-out;
-
 }
 
 .tab-top {
+  height: calc(100% + var(--tab-border-width) / 2);
   background-color: #74dbef;
+  text-decoration: none;
 }
 
 .tab-middle {
+  height: calc(100% + var(--tab-border-width));
+  top: calc(-1 / 2 * var(--tab-border-width));
   background-color: #0074e4;
+  text-decoration: none;
 }
 
 .tab-bottom {
+  height: calc(100% + var(--tab-border-width) / 2);
+  top: calc(-1 / 2 * var(--tab-border-width));
   background-color: #264e86;
+  text-decoration: none;
 }
 
 .tab:hover {
-  left: -4rem;
+  left: -2rem;
 }
 
-.personal-img {
-  width: 20rem;
-  margin: 0 3rem 3rem 0;
-}
 
 a.tab-top:hover {
   color: #ffffff;
   background-color: #34cae7;
-  text-decoration: none;
 }
 
 a.tab-middle:hover {
   background-color: #005cb6;
   color: #ffffff;
-  text-decoration: none;
 }
 
 a.tab-bottom:hover {
   background-color: #1e3e6b;
   color: #ffffff;
-  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 38rem 0 5rem;
+}
+
+.container-small {
+  display: flex;
+  padding: 3rem 0;
+  column-gap: 3rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-project {
+  margin-bottom: 3rem;
+}
+
+.section-project:nth-child(2n) .section-project-title {
+  text-align: right;
+}
+
+
+.intro-top {
+  position:relative;
+  margin-top: 9rem;
+}
+
+.intro-bottom {
+  position:relative;
+  margin-top: 14rem;
+}
+
+.intro-regular {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 4rem;
+}
+
+.intro-top-border {
+  position:absolute;
+  width: 42rem;
+  border-top: 3px #0074e4 solid;
+}
+
+.intro-bottom-border {
+  position:absolute;
+  width: 56rem;
+  border-top: 3px #0074e4 solid;
+}
+
+.intro-large {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 6rem;
+}
+
+
+
+.personal-img {
+  width: 20rem;
+  margin: 0 3rem 3rem 0;
+  border: 0.7rem #05072c solid;
+  border-radius: 90%;
+  background-color: #05072c;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.aboutme-column {
+  display:flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutme-img {
+  width: 20rem;
+  margin-bottom: 3rem;
+}
+
+
+
+.section-project-img {
+  display: flex;
+  flex-direction: row;
+  width: 15rem;
+  border:
+}
+
+.section-contact {
+  display:flex;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  border-width: var(--tab-border-width);
+  border-color: #05072c;
+  border-style: solid;
+
+  padding: 3rem;
+}
+
+.contact-img {
+  display:block;
+  width: 25%;
+  height: auto;
+}
+
+.image {
+  width:100%;
+  height:auto;
 }
