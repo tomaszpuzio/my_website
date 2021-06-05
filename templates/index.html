@@ -1,5 +1,3 @@
-{% import "bootstrap/wtf.html" as wtf %}
-
 {% include "header.html" %}
 
 <body >
@@ -24,13 +22,13 @@
 
     <div class="section" id="home">
       <div class="intro-top">
-        <div class="intro-regular">My name is</div>
-        <div class="intro-large">Tomasz Puzio</div>
+        <div class="text-regular">My name is</div>
+        <div class="text-large">Tomasz Puzio</div>
         <div class="intro-top-border"></div>
       </div>
       <div class="intro-bottom">
-        <div class="intro-regular">I am an engineer aspiring to become</div>
-        <div class="intro-large">Python Developer</div>
+        <div class="text-regular">I am an engineer aspiring to become</div>
+        <div class="text-large">Python Developer</div>
         <div class="intro-bottom-border"></div>
       </div>
     </div>
@@ -61,6 +59,8 @@
 
     <hr />
 
+    <!-- projects -->
+
     <div class="section" id="projects">
       <div class="section-project">
         <h1 class="section-project-title">Pomodoro</h1>
@@ -82,22 +82,13 @@
 
     <hr />
 
-    <div class="section" id="contact">
-      <div class="section-contact">
-        <div class="contact-form">
-        {% for object in contact_form: %}
-        {% if object != contact_form.csrf_token: %}
-        <label for="{{ object.id }}">{{ object.label }}  </label>
-        {{ object(class_="contact-form-field") }}
-        {% endif %}
-        {% endfor %}
-        </div>
-        <div class="contact-img">
-        <img class="image" src="{{ url_for('static', filename='imgs/avatar5.png')}}" alt="Greeting avatar" align="right">
-        </div>
-      </div>
-    </div>
+    {% include "contact.html" %}
 
   </div>
+
+  <footer><div class="footer-info">You can also find me on <a class="link" href="https://github.com/tomaszpuzio">Github<i class="icon fab fa-github fa-2x"></i></a> and <a class="link" href="https://www.linkedin.com/in/tomaszpuzio/">LinkedIn<i class="icon fab fa-linkedin fa-2x"></i></a></div></footer>
+
+  <!-- JavaScript -->
+  <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
 </body>
 </html>
