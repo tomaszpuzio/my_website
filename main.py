@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
-app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = os.environ.get("EMAIL_FROM")
 app.config['MAIL_PASSWORD'] = os.environ.get("EMAIL_PASSWORD")
