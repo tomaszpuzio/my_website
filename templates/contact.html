@@ -1,0 +1,38 @@
+<div class="section" id="contact">
+  <div class="section-contact">
+
+    <div class="contact-form-wrapper">
+      <div class="contact-form-headline text-large">CONTACT ME</div>
+      <div class="contact-form-headline">Do you have a question? If you would like to contact me, please fill in the form below. I will respond to your message as fast as possible.</div>
+
+      <form id="contact-form" method="POST">
+        {{ form.csrf_token }}
+        <div id="csrf_token-error"><img id="csrf_token-error-img" class="error-img hide" src="{{ url_for('static', filename='imgs/warning.png')}}" alt="warning picture" align="left"><div id="csrf_token-error-text"></div></div>
+        <div class="contact-form-object">
+          {{ form.name(id="name-input", placeholder="Name") }}
+          <div id="name-error"><img id="name-error-img" class="name-img hide" src="{{ url_for('static', filename='imgs/warning.png')}}" alt="warning picture" align="left"><div id="name-error-text"></div></div>
+        </div>
+        <div class="contact-form-object">
+          {{ form.email(id="email-input", placeholder="Email address") }}
+          <div id="email-error"><img id="email-error-img" class="error-img hide" src="{{ url_for('static', filename='imgs/warning.png')}}" alt="warning picture" align="left"><div id="email-error-text"></div></div>
+        </div>
+        <div class="contact-form-object">
+          {{ form.message(id="message-input", placeholder="Message") }}
+          <div id="message-error"><img id="message-error-img" class="error-img hide" src="{{ url_for('static', filename='imgs/warning.png')}}" alt="warning picture" align="left"><div id="message-error-text"></div></div>
+        </div>
+        {{ form.submit(id="submit-button") }}
+      </form>
+
+      <div id="success-message"></div>
+
+    </div>
+    <div class="contact-img-background">
+      <img id="chatbot" src="{{ url_for('static', filename='imgs/chatbot.png')}}" alt="Greeting avatar" align="right">
+      <img class="greeting-img" id="hi-img" src="{{ url_for('static', filename='imgs/hi.png')}}" alt="hi image" align="right">
+      <img class="greeting-img" id="thx-img" src="{{ url_for('static', filename='imgs/thank-you.png')}}" alt="thx image" align="right">
+      <span class="hole-img" id="top-half-hole-img"></span>
+      <span class="hole-img" id="bottom-half-hole-img"></span>
+      <span id="curtain-img"></span>
+    </div>
+  </div>
+</div>
